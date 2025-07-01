@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#eeeeee];
+    background-image: url('/header2.jpg');
+    background-size: 100% 100%;
+  background-position: center;
+height: fit-content;
+  }
+}
