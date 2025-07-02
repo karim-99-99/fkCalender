@@ -461,14 +461,14 @@ function Calendar() {
         @media (min-width: 320px) {
           .rbc-button-link,
           .rbc-button {
-            padding-left: 6px !important;
+            padding-right: 40px !important;
           }
         }
         
         @media (min-width: 375px) {
           .rbc-button-link,
           .rbc-button {
-            padding-left: 13px !important;
+            padding-right: 20px !important;
           }
         }
         
