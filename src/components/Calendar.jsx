@@ -536,7 +536,7 @@ function Calendar() {
           longPressThreshold={300} // Reduce long press time (300ms instead of default 500ms)
         />
       </div>
-      <div className="lg:mb-48">
+      <div className="mb-24 lg:mb-48">
         {/* Modal below calendar - Enhanced for mobile */}
         {selectedDate && (
           <div className="mt-6 flex justify-center px-4">
