@@ -4,7 +4,7 @@ import { format, parse, startOfWeek, getDay } from "date-fns";
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 
 const locales = {
   "en-US": enUS,
@@ -55,17 +55,21 @@ function Calendar() {
     setReservationName("");
     setReservationReason("");
   };
-const sendEmail = (e) => {
-  e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
     closeHourModal();
 
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-    .then((result) => {
-        console.log('Email sent!', result.text);
-    }, (error) => {
-        console.error('Failed to send email:', error.text);
-    });
-};
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .then(
+        (result) => {
+          console.log("Email sent!", result.text);
+        },
+        (error) => {
+          console.error("Failed to send email:", error.text);
+        }
+      );
+  };
   // const handleReservationSubmit = (e) => {
   //   e.preventDefault();
   //   // You can handle the reservation data here (e.g., save to state or send to backend)
@@ -237,10 +241,7 @@ const sendEmail = (e) => {
                   {formatHourRange(selectedHour)}
                 </span>
               </h2>
-              <form
-                onSubmit={sendEmail}
-                className="flex flex-col gap-4"
-              >
+              <form onSubmit={sendEmail} className="flex flex-col gap-4">
                 <input
                   type="text"
                   placeholder="Enter your name"
